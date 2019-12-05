@@ -1,12 +1,16 @@
 package com.epam.model;
 
 import com.epam.annotation.MyAnnotation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class BusinessLogic implements Model {
+
+    private static Logger logger = LogManager.getLogger(BusinessLogic.class);
 
     @Override
     public void printAnnotatedFields() {
@@ -21,7 +25,6 @@ public class BusinessLogic implements Model {
                 System.out.println("field: " + f.getName());
                 System.out.println("  @MyAnnotation(name = " + name + ")");
                 System.out.println("  @MyAnnotation(amount = " + amount + ")");
-
             }
         }
     }
@@ -64,7 +67,7 @@ public class BusinessLogic implements Model {
             method.setAccessible(true);
             method.invoke(object);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         }
     }
 
@@ -102,7 +105,7 @@ public class BusinessLogic implements Model {
             System.out.println("Object: " + object);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         }
     }
 
@@ -126,7 +129,7 @@ public class BusinessLogic implements Model {
             System.out.println("Call method3 --> " + number);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         }
     }
 
@@ -152,7 +155,7 @@ public class BusinessLogic implements Model {
                 System.out.println(s);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace());
         }
     }
 }
