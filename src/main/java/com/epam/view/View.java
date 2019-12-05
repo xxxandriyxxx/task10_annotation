@@ -1,7 +1,7 @@
-package com.epam.View;
+package com.epam.view;
 
-import com.epam.Model.MyClass;
-import com.epam.Model.MyGenericClass;
+import com.epam.model.MyClass;
+import com.epam.model.MyGenericClass;
 import com.epam.annotation.MyAnnotation;
 
 import java.lang.reflect.Constructor;

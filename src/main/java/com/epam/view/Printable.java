@@ -1,4 +1,4 @@
-package com.epam.View;
+package com.epam.view;
 
 @FunctionalInterface
 public interface Printable {

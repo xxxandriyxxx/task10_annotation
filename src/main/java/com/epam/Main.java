@@ -1,6 +1,6 @@
 package com.epam;
 
-import com.epam.View.View;
+import com.epam.view.View;
 
 public class Main {
 

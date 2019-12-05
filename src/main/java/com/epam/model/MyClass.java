@@ -1,4 +1,4 @@
-package com.epam.Model;
+package com.epam.model;
 
 import com.epam.annotation.MyAnnotation;
 
