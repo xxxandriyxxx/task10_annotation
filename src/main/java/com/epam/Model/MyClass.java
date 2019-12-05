@@ -38,7 +38,19 @@ public class MyClass {
         this.booleanValue = boolenValue;
     }
 
-    public String[] myMethod(String str, String... args) {
+    private void method1() {
+        System.out.println("Hello from method1()!!!");
+    }
+
+    private String method2(String str) {
+        return str + "method2()";
+    }
+
+    private int method3() {
+        return 200;
+    }
+
+    private String[] myMethod(String str, String... args) {
         String[] stringArray = new String[args.length];
         for (int i = 0; i < args.length; i++) {
             stringArray[i] = str + " --> " + args[i] + " --> " + i;
@@ -46,7 +58,7 @@ public class MyClass {
         return stringArray;
     }
 
-    public String[] myMethod(String... args) {
+    private String[] myMethod(String... args) {
         String[] stringArray = new String[args.length];
         for (int i = 0; i < args.length; i++) {
             stringArray[i] = args[i] + " --> " + i;
