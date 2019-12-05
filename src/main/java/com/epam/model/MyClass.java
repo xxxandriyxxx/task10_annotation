@@ -2,7 +2,6 @@ package com.epam.model;
 
 import com.epam.annotation.MyAnnotation;
 
-
 public class MyClass {
     @MyAnnotation
     private String name;
