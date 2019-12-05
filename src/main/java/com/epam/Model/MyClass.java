@@ -10,7 +10,7 @@ public class MyClass {
     private int intValue;
     private boolean booleanValue;
 
-    private void getInfo(){
+    private void getInfo() {
         System.out.println("Hello from getInfo()!!!");
     }
 
@@ -46,4 +46,15 @@ public class MyClass {
                 ", booleanValue=" + booleanValue +
                 '}';
     }
+
+
+    public String[] myMethod(String str, String... args) {
+        String[] stringArray = new String[args.length];
+        for (int i = 0; i < args.length; i++) {
+            stringArray[i] = str + " --> " + args[i] + " --> " + i;
+        }
+        return stringArray;
+    }
+
+
 }
