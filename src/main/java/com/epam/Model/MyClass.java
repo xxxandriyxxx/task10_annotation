@@ -8,7 +8,7 @@ public class MyClass {
     private String name;
     @MyAnnotation(name = "HelloName")
     private int intValue;
-    private boolean boolenValue;
+    private boolean booleanValue;
 
     private void getInfo(){
         System.out.println("Hello from getInfo()!!!");
@@ -31,10 +31,19 @@ public class MyClass {
     }
 
     public boolean isBoolenValue() {
-        return boolenValue;
+        return booleanValue;
     }
 
     public void setBoolenValue(boolean boolenValue) {
-        this.boolenValue = boolenValue;
+        this.booleanValue = boolenValue;
+    }
+
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "name='" + name + '\'' +
+                ", intValue=" + intValue +
+                ", booleanValue=" + booleanValue +
+                '}';
     }
 }
