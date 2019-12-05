@@ -38,16 +38,6 @@ public class MyClass {
         this.booleanValue = boolenValue;
     }
 
-    @Override
-    public String toString() {
-        return "MyClass{" +
-                "name='" + name + '\'' +
-                ", intValue=" + intValue +
-                ", booleanValue=" + booleanValue +
-                '}';
-    }
-
-
     public String[] myMethod(String str, String... args) {
         String[] stringArray = new String[args.length];
         for (int i = 0; i < args.length; i++) {
@@ -56,5 +46,21 @@ public class MyClass {
         return stringArray;
     }
 
+    public String[] myMethod(String... args) {
+        String[] stringArray = new String[args.length];
+        for (int i = 0; i < args.length; i++) {
+            stringArray[i] = args[i] + " --> " + i;
+        }
+        return stringArray;
+    }
+
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "name='" + name + '\'' +
+                ", intValue=" + intValue +
+                ", booleanValue=" + booleanValue +
+                '}';
+    }
 
 }
