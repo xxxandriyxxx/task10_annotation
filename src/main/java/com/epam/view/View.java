@@ -101,6 +101,35 @@ public class View {
     }
 
     private void setValueUnknownType() {
+        MyClass object = new MyClass();
+        try {
+            Class clazz = object.getClass();
+            System.out.println("-----------");
+            System.out.println("Simple name of class: " + clazz.getSimpleName());
+            System.out.println("-----------");
+            System.out.println("Declared fields of class:");
+            Field[] fields = clazz.getDeclaredFields();
+            for (Field f : fields) {
+                System.out.println("- " + f.getName() + " | type: " + f.getType());
+            }
+            if (fields[0].getType() == String.class) {
+                fields[0].setAccessible(true);
+                fields[0].set(object, "new value");
+            }
+            if (fields[1].getType() == int.class) {
+                fields[1].setAccessible(true);
+                fields[1].setInt(object, 500);
+            }
+            if (fields[2].getType() == boolean.class) {
+                fields[2].setAccessible(true);
+                fields[2].setBoolean(object, true);
+            }
+            System.out.println("-----------");
+            System.out.println("Object: " + object);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void invokeMethodsDifParam() {
